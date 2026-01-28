@@ -2,6 +2,7 @@ import { SocialIcon } from 'react-social-icons/component'
 
 //  data from json
 import socialsData from './socials/data.json'
+import skillsData from './skills/data.json'
 
 //  social icons import idfk
 //  oh yeah add this manually lmfao
@@ -16,9 +17,32 @@ interface Social {
   icon: platforms;
 }
 
+type SkillType = 
+  | 'frontend' 
+  | 'backend' 
+  | 'language' 
+  | 'framework' 
+  | 'web' 
+  | 'robotics' 
+  | 'tool' 
+  | 'devops' 
+  | 'database' 
+  | 'cloud' 
+  | 'system' 
+  | 'runtime' 
+
+interface Skill {
+        skill: string;
+        src: string;
+        type: SkillType[];
+}
+
 const socials = socialsData as Social[];
+const skills = skillsData as Skill[];
 
 function Home(){
+
+        console.log(skills);
 
         return (
                 <>      
@@ -26,7 +50,7 @@ function Home(){
                         <div>
                                 <h2>Hello! My name is Jovi</h2>
                                 <h1>Software Developer</h1>
-                                {/* image div don't forget! */}
+                                <img src='tetorizer.jpg' alt='profile_picture'/>
                         </div>
 
                         {/* Status div */}
@@ -48,6 +72,10 @@ function Home(){
                                 ))}
                         </div>
 
+                        {/* Skills div */}
+                        <div>
+                                
+                        </div>
                 </>
         )
 

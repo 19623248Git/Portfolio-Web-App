@@ -1,0 +1,117 @@
+[
+        {
+                "skill": "HTML",
+                "src": "html.svg",
+                "type": ["frontend", "language"]
+        },
+        {
+                "skill": "CSS",
+                "src": "css.svg",
+                "type": ["frontend", "language"]
+        },
+        {
+                "skill": "Javascript",
+                "src": "js.svg",
+                "type": ["frontend", "backend", "language"]
+        },
+        {
+                "skill": "React",
+                "src": "react.svg",
+                "type": ["frontend", "framework"]
+        },
+        {
+                "skill": "Tailwind",
+                "src": "tailwind.svg",
+                "type": ["frontend"]
+        },
+        {
+                "skill": "Typescript",
+                "src": "ts.svg",
+                "type": ["frontend", "backend", "language"]
+        },
+        {
+                "skill": "NodeJS",
+                "src": "nodejs.svg",
+                "type": ["backend"]
+        },
+        {
+                "skill": "Go",
+                "src": "golang.svg",
+                "type": ["backend", "language"]
+        },
+        {
+                "skill": "PHP",
+                "src": "php.svg",
+                "type": ["backend", "language"]
+        },
+        {
+                "skill": "NextJS",
+                "src": "nextjs.svg",
+                "type": ["frontend", "backend", "framework"]
+        },
+        {
+                "skill": "Gin",
+                "src": "gin.svg",
+                "type": ["backend", "framework"]
+        },
+        {
+                "skill": "Python",
+                "src": "python.svg",
+                "type": ["backend", "robotics", "language"]
+        },
+        {
+                "skill": "C",
+                "src": "c.svg",
+                "type": ["language", "system"]
+        },
+        {
+                "skill": "C++",
+                "src": "c++.svg",
+                "type": ["language", "robotics", "system"]
+        },
+        {
+                "skill": "Java",
+                "src": "java.svg",
+                "type": ["language", "backend"]
+        },
+        {
+                "skill": "Docker",
+                "src": "docker.svg",
+                "type": ["devops", "tool"]
+        },
+        {
+                "skill": "Kubernetes",
+                "src": "kubernetes.svg",
+                "type": ["devops", "tool"]
+        },
+        {
+                "skill": "ROS-2",
+                "src": "ros2.svg",
+                "type": ["framework", "robotics"]
+        },
+        {
+                "skill": "PostgresQL",
+                "src": "pgsql.svg",
+                "type": ["database", "backend"]
+        },
+        {
+                "skill": "MongoDB",
+                "src": "mongodb.svg",
+                "type": ["database", "backend"]
+        },
+        {
+                "skill": "Azure",
+                "src": "azure.svg",
+                "type": ["cloud", "devops", "tool"]
+        },
+        {
+                "skill": "Git",
+                "src": "git.svg",
+                "type": ["tool"]
+        },
+        {
+                "skill": "Github",
+                "src": "github.svg",
+                "type": ["tool"]
+        }
+]
