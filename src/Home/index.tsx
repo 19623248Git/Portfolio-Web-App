@@ -10,32 +10,10 @@ import 'react-social-icons/linkedin'
 import 'react-social-icons/github'
 import 'react-social-icons/email'
 
-type platforms = 'linkedin' | 'github' | 'email' | 'twitter' | 'patreon' | 'discord';
+// Type interface import
+import { type Social } from './socials/type'
+import { type Skill } from './skills/type'
 
-interface Social {
-  url: string;
-  icon: platforms;
-}
-
-type SkillType = 
-  | 'frontend' 
-  | 'backend' 
-  | 'language' 
-  | 'framework' 
-  | 'web' 
-  | 'robotics' 
-  | 'tool' 
-  | 'devops' 
-  | 'database' 
-  | 'cloud' 
-  | 'system' 
-  | 'runtime' 
-
-interface Skill {
-        skill: string;
-        src: string;
-        type: SkillType[];
-}
 
 const socials = socialsData as Social[];
 const skills = skillsData as Skill[];
