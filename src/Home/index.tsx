@@ -1,4 +1,22 @@
+import { SocialIcon } from 'react-social-icons/component'
 
+//  data from json
+import socialsData from './socials/data.json'
+
+//  social icons import idfk
+//  oh yeah add this manually lmfao
+import 'react-social-icons/linkedin'
+import 'react-social-icons/github'
+import 'react-social-icons/email'
+
+type platforms = 'linkedin' | 'github' | 'email' | 'twitter' | 'patreon' | 'discord';
+
+interface Social {
+  url: string;
+  icon: platforms;
+}
+
+const socials = socialsData as Social[];
 
 function Home(){
 
@@ -14,12 +32,20 @@ function Home(){
                         {/* Status div */}
                         <div>
                                 <h1>STATUS</h1>
-                                <h2>Looking for an internship :), please contact one of my socials!</h2>
+                                <h2><strong>Looking for internship</strong>, please contact me through my socials!</h2>
                         </div>
 
                         {/* Socials div */}
                         <div>
-                                {/* just map out a json file later, don't manual labor ts lol */}
+                                {socials.map((social) =>(
+                                        <SocialIcon
+                                                key={social.icon}
+                                                network={social.icon}
+                                                url={social.url}
+                                                target='_blank'
+                                                rel="noopener noreferrer" 
+                                        />
+                                ))}
                         </div>
 
                 </>

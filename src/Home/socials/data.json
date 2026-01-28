@@ -1,10 +1,14 @@
 [
         {
-                "app": "Linkedin",
-                "url": ""
+                "url": "https://www.linkedin.com/in/nathan-hartono-024595245",
+                "icon": "linkedin"
         },
         {
-                "app": "Github",
-                "url": ""
+                "url": "https://github.com/19623248Git",
+                "icon": "github"
+        },
+        {
+                "url": "mailto:nathjovi899@gmail.com",
+                "icon": "email"
         }
 ]
