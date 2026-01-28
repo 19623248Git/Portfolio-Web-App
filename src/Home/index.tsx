@@ -14,6 +14,9 @@ import 'react-social-icons/email'
 import { type Social } from './socials/type'
 import { type Skill } from './skills/type'
 
+// Import skills display
+import SkillsDisplay from './Skill_Display'
+
 
 const socials = socialsData as Social[];
 const skills = skillsData as Skill[];
@@ -52,7 +55,7 @@ function Home(){
 
                         {/* Skills div */}
                         <div>
-                                
+                                <SkillsDisplay skills={skills}/>
                         </div>
                 </>
         )
