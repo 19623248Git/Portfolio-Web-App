@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+body {
+  font-family: "Operator Mono", "Dank Mono", "SF Mono", "Monaco", "Inconsolata", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}
