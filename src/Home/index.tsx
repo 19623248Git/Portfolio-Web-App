@@ -1,32 +1,10 @@
-import { SocialIcon } from 'react-social-icons/component'
-
-//  data from json
-import socialsData from './socials/data.json'
-import skillsData from './skills/data.json'
-
-//  social icons import idfk
-//  oh yeah add this manually lmfao
-import 'react-social-icons/linkedin'
-import 'react-social-icons/github'
-import 'react-social-icons/email'
-
-// Type interface import
-import { type Social } from './socials/type'
-import { type Skill } from './skills/type'
-
-// Import skills display
-import SkillsDisplay from './Skill_Display'
-
-
-const socials = socialsData as Social[];
-const skills = skillsData as Skill[];
-
+// import socials display
 function Home(){
 
-        console.log(skills);
+        return (    
+                
+                <div className='bg-[#262334] min-h-screen'>
 
-        return (
-                <>      
                         {/* Header div */}
                         <div>
                                 <h2>Hello! My name is Jovi</h2>
@@ -40,24 +18,9 @@ function Home(){
                                 <h2><strong>Looking for internship</strong>, please contact me through my socials!</h2>
                         </div>
 
-                        {/* Socials div */}
-                        <div>
-                                {socials.map((social) =>(
-                                        <SocialIcon
-                                                key={social.icon}
-                                                network={social.icon}
-                                                url={social.url}
-                                                target='_blank'
-                                                rel="noopener noreferrer" 
-                                        />
-                                ))}
-                        </div>
+                        {/* test the skill div */}
 
-                        {/* Skills div */}
-                        <div>
-                                <SkillsDisplay skills={skills}/>
-                        </div>
-                </>
+                </div>
         )
 
 }

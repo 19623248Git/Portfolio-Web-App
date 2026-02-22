@@ -1,21 +1,20 @@
 import { type Skill } from "../skills/type"
+import { SkillDiv } from "../../components/skills_div"
 
-interface Props{
-        skills: Skill[]
-}
+//  data from json
+import skillsData from '../skills/data.json';
 
-function SkillsDisplay(p: Props){
+const skills = skillsData as Skill[];
+
+function SkillsDisplay(){
 
         return(
                 <>
-                        <div>
-                                {p.skills.map((skillObj) => (
-                                        <div key={skillObj.skill}>
-                                                <img src={`${skillObj.src}`} alt={skillObj.skill} width={76} height={76}/>
-                                                <p>{skillObj.skill}</p>
-                                        </div>
+                        <div className="flex flex-col gap-5">
+                                {skills.map((skillObj) => (
+                                        <SkillDiv key={skillObj.skill} {...skillObj} />
                                 ))}
-                        </div>    
+                        </div>
                 </>
         )
 
