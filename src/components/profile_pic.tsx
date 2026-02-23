@@ -7,6 +7,9 @@ export default function ProfilePicStyled(){
 
         return(
                 <div className="relative w-[292px] h-[292px]">
+                        <div className="absolute inset-0 rounded-full z-20 border-6 border-[#ff7edb]">
+
+                        </div>
                         <motion.img
                                 src="profile.jpg"
                                 alt="profile_picture"
