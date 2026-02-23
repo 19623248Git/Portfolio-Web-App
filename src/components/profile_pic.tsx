@@ -24,7 +24,7 @@ export default function ProfilePicStyled(){
                                 className="absolute inset-0 bg-white rounded-full z-0 w-[292px] h-[292px]"
                                 initial={{ opacity: 1}}
                                 animate={{
-                                        opacity: [1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1]
+                                        opacity: [1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1]
                                 }}
                                 transition={{
                                         duration: 1,
