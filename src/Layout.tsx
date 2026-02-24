@@ -18,9 +18,9 @@ function Layout() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-cover bg-center bg-[url(synthwave_bg.jpg)]">
+    <div className="min-h-screen flex justify-center items-center bg-cover bg-center bg-[url(synthwave_bg.jpg)] p-8 sm:p-16">
       {/* div home */}
-      <div className='bg-[#262334] flex flex-col items-center justify-center gap-4'>
+      <div className='bg-[#262334] flex flex-col items-center justify-center gap-4 w-full max-w-[800px]'>
         {/* navbar ish like vscode */}
         <div className="flex w-full bg-[#241b2f] text-[16px] overflow-x-auto">
           {tabs.map((tab) => (
@@ -40,7 +40,7 @@ function Layout() {
         </div>
 
         {/* Content div */}
-        <div className="flex flex-col items-center justify-center gap-8 p-8 md:p-20 md:pt-8 w-full">
+        <div className="h-[450px]">
           <Outlet />
         </div>
       </div>
