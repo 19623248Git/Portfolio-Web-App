@@ -6,8 +6,8 @@ export default function ProfilePicStyled(){
         const [isRevealed, setIsRevealed] = useState(false);
 
         return(
-                <div className="relative w-[292px] h-[292px]">
-                        <div className="absolute inset-0 rounded-full z-20 border-6 border-[#ff7edb]">
+                <div className="relative w-[292px] h-[292px] shrink-0">
+                        <div className="absolute inset-0 rounded-full z-20 border-6 border-[#36f9f6]">
 
                         </div>
                         <motion.img
