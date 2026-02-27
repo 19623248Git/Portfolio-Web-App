@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { type Skill } from "../Home/skills/type"
+import { type Skill } from "../skills/type"
 import { useState } from "react"
 
 // https://colorhunt.co/palette/fff7cdfdc3a1fb9b8ff57799

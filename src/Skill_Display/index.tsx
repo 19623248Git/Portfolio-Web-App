@@ -1,5 +1,5 @@
 import { type Skill } from "../skills/type"
-import { SkillDiv } from "../../components/skills_div"
+import { SkillDiv } from "../components/skills_div"
 
 //  data from json
 import skillsData from '../skills/data.json';
