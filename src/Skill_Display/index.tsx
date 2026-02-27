@@ -1,8 +1,8 @@
-import { type Skill } from "../skills/type"
+import { type Skill } from "./skills/type"
 import { SkillDiv } from "../components/skills_div"
 
 //  data from json
-import skillsData from '../skills/data.json';
+import skillsData from './skills/data.json';
 
 const skills = skillsData as Skill[];
 

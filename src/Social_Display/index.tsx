@@ -1,8 +1,8 @@
 import { SocialIcon } from 'react-social-icons/component';
 
-import { type Social } from '../socials/type';
+import { type Social } from './socials/type';
 
-import socialsData from '../socials/data.json';
+import socialsData from './socials/data.json';
 
 //  social icons import idfk
 //  oh yeah add this manually lmfao
