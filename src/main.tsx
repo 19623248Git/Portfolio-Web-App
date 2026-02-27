@@ -4,12 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import './index.css'
 import Layout from './Layout';
 import Home from './Home';
+import AboutMe from './About';
 
 // temporary jsx lol
 const Skills = () => <h2>My Technical Skills</h2>;
 const Projects = () => <h2>My Portfolio Projects</h2>;
 const Socials = () => <h2>My Socials</h2>;
-const AboutMe = () => <h2>About Me</h2>;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

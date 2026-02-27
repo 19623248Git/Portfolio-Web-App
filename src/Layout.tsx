@@ -8,9 +8,9 @@ function Layout() {
   const tabs = [
     { name: 'Home', path: '/', component: 'Home.tsx' },
     { name: 'About Me', path: '/aboutme', component: 'About.tsx' },
-    { name: 'Socials', path: '/socials', component: 'Socials.tsx' },
     { name: 'Skills', path: '/skills', component: 'Skills.tsx' },
     { name: 'Projects', path: '/projects', component: 'Projects.tsx' },
+    { name: 'Socials', path: '/socials', component: 'Socials.tsx' },
   ];
 
   const getCurrentTab = () => {
