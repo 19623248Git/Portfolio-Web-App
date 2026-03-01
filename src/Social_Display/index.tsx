@@ -16,7 +16,7 @@ const socials = socialsData as Social[];
 export default function SocialDisplay(){
         return(
                 <motion.div 
-                        className='flex flex-row justify-around w-full py-8 border'
+                        className='flex flex-row justify-around w-full py-8 my-8 border'
                         initial={{ clipPath: "inset(0 100% 0 0)" }}
                         animate={{ clipPath: "inset(0 0% 0 0)" }}
                         transition={{ duration: 1, ease: "circInOut" }}
