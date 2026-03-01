@@ -21,7 +21,7 @@ function Home(){
 
                         {/* Status div */}
                         <div className="text-[#ff7edb]">
-                                <Typewriter text="Looking for internship, please contact me through my socials!"/>
+                                <Typewriter text="Looking for internship, please check out my Socials.tsx for contact!"/>
                         </div>
                 </div>
         )
