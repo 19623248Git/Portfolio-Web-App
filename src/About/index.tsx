@@ -24,7 +24,7 @@ export default function AboutMe(){
                                                 DevOps
                                         </li>
                                         <li>
-                                                Pentesting (red team)
+                                                Cybersecurity
                                         </li>
                                 </ul>
                         
