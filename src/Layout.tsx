@@ -41,7 +41,7 @@ function Layout() {
         </div>
 
         {/* Content div */}
-        <div className="h-[450px]">
+        <div className="h-[450px] w-full">
           <Outlet />
         </div>
       </div>
