@@ -55,10 +55,11 @@ function Home(){
 
         const imageDisplay = useMemo(() =>{
                 return (IsImageLoaded ? 
-                        // Unanimated version - just show the profile image directly
+                        
                         <div className="relative w-[292px] h-[292px] shrink-0">
                                 <div className="absolute inset-0 rounded-full z-20 border-6 border-[#36f9f6]"></div>
-                                <img
+                                <img    
+                                        loading="lazy"
                                         src="profile.jpg"
                                         alt="profile_picture"
                                         className="absolute inset-0 rounded-full z-10"
