@@ -8,7 +8,7 @@ export default function Social(){
                                 SOCIALS
                         </h1>
                         <p className="text-justify">
-                                Consider Checking Out my Socials Below! Contact me via my Email!
+                                Consider Checking Out my Socials Below! Contact me by Email!
                         </p>
                         <SocialDisplay />
                 </div>
