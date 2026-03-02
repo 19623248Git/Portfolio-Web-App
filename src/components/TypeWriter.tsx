@@ -5,9 +5,10 @@ interface TypewriterProps {
   text: string;
   speed?: number; // Time per character in seconds
   className?: string;
+  onComplete?: () => void;
 }
 
-export const Typewriter = ({ text, speed = 0.05, className }: TypewriterProps) => {
+export const Typewriter = ({ text, speed = 0.05, className, onComplete }: TypewriterProps) => {
 
         const count = useMotionValue(0);
 
@@ -20,12 +21,15 @@ export const Typewriter = ({ text, speed = 0.05, className }: TypewriterProps) =
                         type: "tween",
                         duration: text.length * speed,
                         ease: "linear",
+                        onComplete: () => {
+                                onComplete?.();
+                        }
                 });
 
 
                 return controls.stop;
                 
-        }, [count, text.length, speed]);
+        }, [count, text.length, speed, onComplete]);
 
         return (
 

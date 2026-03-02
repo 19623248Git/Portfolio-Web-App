@@ -1,7 +1,44 @@
 import { Typewriter } from "../components/TypeWriter";
 import ProfilePicStyled from "../components/profile_pic";
+import { useState, useEffect, useMemo } from "react";
 
 function Home(){
+
+        const[IsStatusTyped,SetIsStatusTyped] = useState(false)
+        
+        useEffect(() => {
+                const hasTypedBefore = localStorage.getItem('statusTyped') === 'true';
+                SetIsStatusTyped(hasTypedBefore);
+        }, []);
+
+        // Clear localStorage when trying to close tab
+        useEffect(() => {
+                const handleBeforeUnload = () => {
+                        localStorage.removeItem('statusTyped');
+                };
+
+                window.addEventListener('beforeunload', handleBeforeUnload);
+
+                return () => {
+                        window.removeEventListener('beforeunload', handleBeforeUnload);
+                };
+        }, []);
+
+        // function to update state if the status is already typed, called at the end of the motion animation
+        const handleTypingComplete = () => {
+                SetIsStatusTyped(true);
+                localStorage.setItem('statusTyped', 'true');
+        };
+
+        const statusText = "Looking for internship, please check out my Socials.tsx for contact!";
+
+        // Why not :D
+        const statusDisplay = useMemo(() => {
+                if (IsStatusTyped) {
+                        return <div className="text-[#ff7edb]">{statusText}</div>;
+                }
+                return <Typewriter text={statusText} onComplete={handleTypingComplete} />;
+        }, [IsStatusTyped]);
 
         return (    
                 <div className="flex flex-col items-center justify-center gap-12 px-8 md:px-20 md:pt-8">
@@ -21,7 +58,7 @@ function Home(){
 
                         {/* Status div */}
                         <div className="text-[#ff7edb]">
-                                <Typewriter text="Looking for internship, please check out my Socials.tsx for contact!"/>
+                                {statusDisplay}
                         </div>
                 </div>
         )
