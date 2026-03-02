@@ -1,9 +1,18 @@
 import { motion } from "motion/react"
 import { useState } from "react";
 
-export default function ProfilePicStyled(){
+interface ProfilePicProps {
+        onComplete?: () => void;
+}
+
+export default function ProfilePicStyled({ onComplete }: ProfilePicProps = {}){
 
         const [isRevealed, setIsRevealed] = useState(false);
+
+        const handleAnimationComplete = () => {
+                setIsRevealed(true);
+                onComplete?.();
+        };
 
         return(
                 <div className="relative w-[292px] h-[292px] shrink-0">
@@ -31,7 +40,7 @@ export default function ProfilePicStyled(){
                                         times: [0, 0.399, 0.4, 0.499, 0.5, 0.599, 0.6, 0.699, 0.7, 0.799, 0.8, 0.899, 0.9, 1],
                                         ease: "linear",
                                 }}
-                                onAnimationComplete={() => setIsRevealed(true)}
+                                onAnimationComplete={handleAnimationComplete}
                                 
                         />
                 </div>
