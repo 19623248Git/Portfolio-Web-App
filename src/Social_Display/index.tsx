@@ -49,7 +49,7 @@ export default function SocialDisplay(){
         const socialsMapping : JSX.Element = (
                 <>
                         {socials.map((social) =>(
-                                <div key={social.icon} className='group flex flex-col items-center justify-center gap-4'>
+                                <div key={social.icon} className='group flex flex-col items-center justify-center gap-2'>
                                         <div className='transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:scale-110'>
                                                 <SocialIcon
                                                         network={social.icon}
@@ -60,7 +60,7 @@ export default function SocialDisplay(){
                                                         style={{height: 64, width: 64}}                                        
                                                 />
                                         </div>
-                                        <div className='transition-all duration-300 ease-in-out text-l group-hover:text-[#fba199]'>
+                                        <div className='transition-all duration-300 ease-in-out text-l group-hover:text-[#fba199] group-hover:text-xl group-hover:font-bold'>
                                                 {social.icon}
                                         </div>
                                 </div>
