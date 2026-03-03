@@ -7,14 +7,34 @@ import skillsData from '../Skill_Display/skills/data.json';
 
 const skills = skillsData as Skill[];
 
-// Constants
+// Image Constant
 const IMAGE_SIZE: number = 57;
+
+// Gradient Constant
+// FORMAT IN [R, G, B]
+const start_gradient:[number, number, number] = [255, 126, 219];
+const end_gradient:[number, number, number] = [254, 222, 93];
 
 function SkillsCarousel(){
         const [index, setIndex] = useState(0);
         const [GAP, setGAP] = useState(0);
         const containerRef = useRef<HTMLDivElement>(null);
         const motionRef = useRef<HTMLDivElement>(null);
+
+        const getColorFromGradient = (index: number, total: number) => {
+
+                // edge case, if only there is one object
+                if (total <= 1) return `rgb(${start_gradient.join(',')})`;
+
+                const HERE = index / (total-1);
+                
+                const r = start_gradient[0] + (end_gradient[0] - start_gradient[0]) * HERE;
+                const g = start_gradient[1] + (end_gradient[1] - start_gradient[1]) * HERE;
+                const b = start_gradient[2] + (end_gradient[2] - start_gradient[2]) * HERE;
+
+                return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
+
+        }
 
         // initial centering carousel
         useEffect(() => {
@@ -70,7 +90,7 @@ function SkillsCarousel(){
                                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                                 className="flex flex-col gap-5"
                                         >
-                                                {skills.map((skillObj) => (
+                                                {skills.map((skillObj, index) => (
                                                         <div key={skillObj.skill} className="flex flex-row items-center justify-center gap-4">
                                                                 <img 
                                                                         loading="lazy" 
@@ -78,7 +98,12 @@ function SkillsCarousel(){
                                                                         className="object-fill" 
                                                                         style={{ width: IMAGE_SIZE, height: IMAGE_SIZE }}
                                                                 />
-                                                                <h1 className="text-2xl">
+                                                                <h1 
+                                                                        className="text-2xl"
+                                                                        style={{
+                                                                                color: getColorFromGradient(index,skills.length)
+                                                                        }}
+                                                                >
                                                                         {skillObj.skill}
                                                                 </h1>
                                                         </div>
