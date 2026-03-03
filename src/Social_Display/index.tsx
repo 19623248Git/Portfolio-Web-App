@@ -13,13 +13,18 @@ import 'react-social-icons/email';
 
 const socials = socialsData as Social[];
 
-export default function SocialDisplay(){
+interface socialDisplayProps {
+        onComplete?: () => void;
+}
+
+export default function SocialDisplay({onComplete} : socialDisplayProps){
         return(
                 <motion.div 
-                        className='flex flex-row justify-around w-full py-8 my-8 border'
+                        className='flex flex-row justify-around w-full py-8 my-8 border-2'
                         initial={{ clipPath: "inset(0 100% 0 0)" }}
                         animate={{ clipPath: "inset(0 0% 0 0)" }}
                         transition={{ duration: 1, ease: "circInOut" }}
+                        onAnimationComplete={onComplete}
                 >
                         {socials.map((social) =>(
                                 <div className='group flex flex-col items-center justify-center gap-4'>
