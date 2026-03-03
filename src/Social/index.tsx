@@ -5,31 +5,31 @@ export default function Social(){
 
         const[isSocialDisplayed,setIsSocialDisplayed] = useState(false);
 
-        // fetch the locally stored state from localstorage
+        // fetch the locally stored state from sessionStorage
         useEffect(()=>{
-                setIsSocialDisplayed(localStorage.getItem('isSocialDisplayed') === 'true');
+                setIsSocialDisplayed(sessionStorage.getItem('isSocialDisplayed') === 'true');
         },[])
 
         // function to update the status of the social display
         // this should be called by the motion div when the animation is done 
         const handleSocialDisplayed = () => {
                 setIsSocialDisplayed(true);
-                localStorage.setItem('isSocialDisplayed', 'true');
+                sessionStorage.setItem('isSocialDisplayed', 'true');
         }
         
-        // when close tab remove the localstorage
+        // when close tab remove the sessionStorage
 
         useEffect(() => {
 
-                const removeLocalStorage = () => {
-                        localStorage.removeItem('isSocialDisplayed');
+                const removeSessionStorage = () => {
+                        sessionStorage.removeItem('isSocialDisplayed');
                 }
 
-                window.addEventListener('beforeunload', removeLocalStorage);
+                window.addEventListener('beforeunload', removeSessionStorage);
 
                 // remove the event listener i guess lmao
                 return () => {
-                        window.removeEventListener('beforeunload',removeLocalStorage);
+                        window.removeEventListener('beforeunload',removeSessionStorage);
                 }
 
         },[])

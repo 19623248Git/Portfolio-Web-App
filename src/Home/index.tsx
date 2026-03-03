@@ -8,20 +8,20 @@ function Home(){
         const[IsImageLoaded,SetIsImageLoaded] = useState(false)
         
         useEffect(() => {
-                const hasTypedBefore = localStorage.getItem('statusTyped') === 'true';
+                const hasTypedBefore = sessionStorage.getItem('statusTyped') === 'true';
                 SetIsStatusTyped(hasTypedBefore);
         }, []);
 
         useEffect(()=>{
-                const ImageLoadedBefore = localStorage.getItem('imageLoaded') === 'true';
+                const ImageLoadedBefore = sessionStorage.getItem('imageLoaded') === 'true';
                 SetIsImageLoaded(ImageLoadedBefore);
         }, []);
 
-        // Clear localStorage when trying to close tab
+        // Clear sessionStorage when trying to close tab
         useEffect(() => {
                 const handleBeforeUnload = () => {
-                        localStorage.removeItem('statusTyped');
-                        localStorage.removeItem('imageLoaded');
+                        sessionStorage.removeItem('statusTyped');
+                        sessionStorage.removeItem('imageLoaded');
                 };
 
                 window.addEventListener('beforeunload', handleBeforeUnload);
@@ -34,13 +34,13 @@ function Home(){
         // function to update state if the status is already typed, called at the end of the motion animation
         const handleTypingComplete = () => {
                 SetIsStatusTyped(true);
-                localStorage.setItem('statusTyped', 'true');
+                sessionStorage.setItem('statusTyped', 'true');
         };
         
         // same idea as above but for image
         const whenImageAnimComplete = () => {
                 SetIsImageLoaded(true);
-                localStorage.setItem('imageLoaded', 'true');
+                sessionStorage.setItem('imageLoaded', 'true');
         }
 
         const statusText = "Looking for internship, please check out my Socials.tsx for contact!";
