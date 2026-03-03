@@ -23,7 +23,6 @@ function SkillsCarousel(){
                         
                         // Get gap value from motion.div
                         const computedStyle = window.getComputedStyle(motionRef.current);
-                        console.log('Motion div gap:', computedStyle.gap);
                         const gapValue = parseInt(computedStyle.gap) || 0;
                         setGAP(gapValue);
                         
