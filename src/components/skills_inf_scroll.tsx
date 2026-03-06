@@ -10,10 +10,34 @@ const skills = skillsData as Skill[];
 const IMAGE_SIZE = 38
 
 export default function SkillsInfScroll(){
+        const borderedDivRef = useRef<HTMLDivElement>(null);
+
+        const getMiddleYPosition = () => {
+                if (borderedDivRef.current) {
+                        const rect = borderedDivRef.current.getBoundingClientRect();
+                        const middleY = rect.top + (rect.height / 2);
+                        console.log('Middle Y position:', middleY);
+                        return middleY;
+                }
+                return null;
+        };
+
+        useEffect(() => {
+                
+                getMiddleYPosition();
+
+                window.addEventListener('resize', getMiddleYPosition)
+
+                return () => {
+                        window.removeEventListener('resize', getMiddleYPosition)
+                }
+
+        }, []);
 
         return(
                 <div className="flex w-full h-full justify-center items-center">
                         <div 
+                                ref={borderedDivRef}
                                 className="flex flex-col overflow-auto h-[80%] w-[60%] text-white items-center border border-white gap-8"
                         >
                                 {skills.map((SkillObj) => (
