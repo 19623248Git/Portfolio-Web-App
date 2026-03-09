@@ -1,10 +1,12 @@
-import SkillsCarousel from "../components/skills_carousel";
+import SkillsInfScroll from "../components/skills_inf_scroll"
 
 function SkillsDisplay(){
 
         return(
                 <>
-                        <SkillsCarousel/>
+                        
+                        <SkillsInfScroll />
+                        
                 </>
         )
 
