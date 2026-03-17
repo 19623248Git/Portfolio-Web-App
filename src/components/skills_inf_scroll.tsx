@@ -46,12 +46,17 @@ export default function SkillsInfScroll(){
                                                 const itemColor : string = getColorForIndex(index);
 
                                                 return (
-                                                <motion.div 
+                                                <motion.div
                                                         key={`${SkillObj.skill}-${index}`} 
-                                                        className="flex flex-row items-center justify-between w-[40%] py-4 shrink-0"
-                                                        
-                                                        initial={{ color: "#6b7280" }}
-                                                        whileInView={{ color: itemColor }}
+                                                        className="flex w-[80%] items-center justify-center my-2 border border-1 rounded-r-4xl"
+
+                                                        initial="dimmed"
+                                                        whileInView="highlighted"
+
+                                                        variants={{
+                                                                dimmed: { backgroundColor: "rgba(0,0,0,0)", color: "#6b7280" },
+                                                                highlighted: { backgroundColor: itemColor, color: "#000000", transition: { duration: 0.2 } }
+                                                        }}
                                                         
                                                         viewport={{ 
                                                         margin: "-49% 0px -49% 0px",
@@ -59,16 +64,26 @@ export default function SkillsInfScroll(){
                                                         }}
                                                         transition={{ duration: 0.2 }}
                                                 >
-                                                        <h1 className="text-xl font-bold">
-                                                        {SkillObj.skill}
-                                                        </h1>
-                                                        <img 
-                                                        loading="lazy" 
-                                                        src={`${SkillObj.src}`} 
-                                                        className="object-fill"
-                                                        style={{ width: IMAGE_SIZE, height: IMAGE_SIZE }}
-                                                        alt={`${SkillObj.skill} icon`}
-                                                        />
+                                                        <div className="flex flex-row items-center justify-between w-[60%] py-8 shrink-0">
+                                                                <h1 className="text-xl font-bold">
+                                                                        {SkillObj.skill}
+                                                                </h1>
+                                                                <motion.div
+                                                                        className="p-1.5 rounded-md flex items-center justify-center"
+                                                                        variants={{
+                                                                        dimmed: { backgroundColor: "rgba(255,255,255,0)" },
+                                                                        highlighted: { backgroundColor: "#ffffff", transition: { duration: 0.2 } }
+                                                                        }}
+                                                                >
+                                                                        <img 
+                                                                        loading="lazy" 
+                                                                        src={`${SkillObj.src}`} 
+                                                                        className="object-fill"
+                                                                        style={{ width: IMAGE_SIZE, height: IMAGE_SIZE }}
+                                                                        alt={`${SkillObj.skill} icon`}
+                                                                        />
+                                                                </motion.div>
+                                                        </div>
                                                 </motion.div>
                                                 );
                                         })}
