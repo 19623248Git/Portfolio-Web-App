@@ -12,9 +12,9 @@ const skills = skillsData as Skill[];
 
 const IMAGE_SIZE : number = 38
 
-const gradients : String[] = ["#FF7EDB","#FF7A6E","#FEDE5D","#72F1B8", "#36F9F6", "#FF7EDB"]
+const gradients : string[] = ["#FF7EDB","#FF7A6E","#FEDE5D","#72F1B8", "#36F9F6", "#FF7EDB"]
 
-const getColorForIndex = (index: number) => {
+const getColorForIndex = (index: number) : string => {
     
         
         const percentage = index / skills.length;
@@ -43,7 +43,7 @@ export default function SkillsInfScroll(){
                                 <div className="flex flex-col items-center h-full">
                                         {skills.map((SkillObj, index) => {
                                                 
-                                                const itemColor = getColorForIndex(index);
+                                                const itemColor : string = getColorForIndex(index);
 
                                                 return (
                                                 <motion.div 
