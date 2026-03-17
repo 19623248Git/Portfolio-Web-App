@@ -23,7 +23,11 @@ const getColorForIndex = (index: number) : string => {
 
 };
 
-export default function SkillsInfScroll(){
+interface SkillsInfScrollProps {
+    setSkillColor: (color: string) => void;
+}
+
+export default function SkillsInfScroll({ setSkillColor } : SkillsInfScrollProps){
         
         // initialize the embla carousel
 
@@ -62,6 +66,9 @@ export default function SkillsInfScroll(){
                                                         margin: "-49% 0px -49% 0px",
                                                         once: false
                                                         }}
+                                                        
+                                                        onViewportEnter={() => setSkillColor(itemColor)}
+
                                                         transition={{ duration: 0.2 }}
                                                 >
                                                         <div className="flex flex-row items-center justify-between w-[60%] py-8 shrink-0">
