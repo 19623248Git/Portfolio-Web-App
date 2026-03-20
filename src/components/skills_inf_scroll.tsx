@@ -1,6 +1,9 @@
+// import { useState, useCallback } from "react";
 import { type Skill } from "../Skill_Display/skills/type"
+import AutoScroll, {type AutoScrollOptionsType} from 'embla-carousel-auto-scroll';
 import { motion } from 'framer-motion';
 import chroma from "chroma-js";
+// import { FaPlay, FaPause } from "react-icons/fa";
 
 // trying out this new carousel library
 import useEmblaCarousel from 'embla-carousel-react';
@@ -29,13 +32,21 @@ interface SkillsInfScrollProps {
 
 export default function SkillsInfScroll({ setSkillColor } : SkillsInfScrollProps){
         
+        // the autoplay options
+
+        const options: AutoScrollOptionsType = {
+                speed: 2,
+                stopOnInteraction: false
+        }
+
         // initialize the embla carousel
 
         const [emblaRef] = useEmblaCarousel({ 
                 loop: true, 
                 dragFree: true, 
                 axis: 'y' 
-        });
+        },[AutoScroll(options)]
+        );
 
         return(
                 <div className="flex w-full h-full justify-center items-center">
