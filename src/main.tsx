@@ -7,9 +7,7 @@ import Home from './Home';
 import AboutMe from './About';
 import Social from './Social';
 import SkillsDisplay from './Skill_Display';
-
-// temporary jsx lol
-const Projects = () => <h2>My Portfolio Projects</h2>;
+import ProjectDisplay from './Projects';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -20,7 +18,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="aboutme" element={<AboutMe />} />
           <Route path="socials" element={<Social />} />
           <Route path="skills" element={<SkillsDisplay />} />
-          <Route path="projects" element={<Projects />} />
+          <Route path="projects" element={<ProjectDisplay />} />
         </Route>
       </Routes>
     </BrowserRouter>
