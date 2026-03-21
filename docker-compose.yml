@@ -30,5 +30,5 @@ services:
       app:
         # this should get triggered after healthcheck
         condition: service_healthy
-      restart: unless-stopped
+    restart: unless-stopped
 
