@@ -1,7 +1,7 @@
 services:
   app:
-    image: portfolio/reactAppImage
-    container: portfolioReactAppContainer
+    image: portfolio/react-app-image
+    container_name: portfolio-react-app-container
     build:
       context: .
       dockerfile: Dockerfile
