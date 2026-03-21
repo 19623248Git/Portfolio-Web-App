@@ -34,7 +34,7 @@ function Home(){
         
 
 
-        const statusText = "Looking for internship, please check out my Socials.tsx for contact!";
+        const statusText = "Looking for opportunities, please contact me through my Socials.tsx!";
         
         // useMemo why not :D
         const statusDisplay = useMemo(() => {
