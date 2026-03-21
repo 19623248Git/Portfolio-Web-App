@@ -8,6 +8,10 @@ services:
     expose:
       - "9821"
     restart: unless-stopped
+
+    # this is configured in the VM
+    networks:
+      - web-gateway
     
     healthcheck:
       # healthcheck command idfk
@@ -16,19 +20,8 @@ services:
       timeout: 10s
       retries: 3
       start_period: 5s
-  
-  nginx:
-    image: nginx:alpine
-    container_name: portoflio-nginx-proxy
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./ssl:/etc/nginx/ssl:ro
-    depends_on:
-      app:
-        # this should get triggered after healthcheck
-        condition: service_healthy
-    restart: unless-stopped
+
+networks:
+  web-gateway:
+    external: true
 
