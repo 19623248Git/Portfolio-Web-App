@@ -24,7 +24,7 @@ RUN addgroup -g 1001 -S nodejs && adduser -S reactapp -u 1001
 RUN npm install -g serve
 
 # copy built application from the builder
-COPY --from=builder --chown=reactapp:nodejs /app/build ./build
+COPY --from=builder --chown=reactapp:nodejs /app/dist ./dist
 
 # switch to non root user
 USER reactapp
@@ -35,4 +35,4 @@ EXPOSE 9821
 # I'll implement this later
 
 # Start Application
-CMD ["serve", "-s", "build", "-l", "9821"]
+CMD ["serve", "-s", "dist", "-l", "9821"]
