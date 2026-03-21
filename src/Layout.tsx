@@ -19,7 +19,7 @@ function Layout() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-cover bg-center bg-[url(synthwave_bg.jpg)] p-8 sm:p-16">
+    <div className="min-h-screen flex justify-center items-center bg-cover bg-center bg-[url(/synthwave_bg.jpg)] p-8 sm:p-16">
       {/* div vscode window ish */}
       <div className='bg-[#262334] flex flex-col items-center justify-center gap-4 w-full max-w-[800px] border border-gray-400'>
         {/* navbar ish like vscode */}
