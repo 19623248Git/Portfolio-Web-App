@@ -18,8 +18,7 @@ FROM node:current-alpine3.22 AS production
 WORKDIR /app
 
 # create non-root user
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S reactapp -u 1001
+RUN addgroup -g 1001 -S nodejs && adduser -S reactapp -u 1001
 
 # install the serve library
 RUN npm install -g serve
@@ -30,10 +29,10 @@ COPY --from=builder --chown=reactapp:nodejs /app/build ./build
 # switch to non root user
 USER reactapp
 
-EXPOSE 8080
+EXPOSE 9821
 
 # Health Check
 # I'll implement this later
 
 # Start Application
-CMD ["serve", "-s", "build", "-l", "8080"]
+CMD ["serve", "-s", "build", "-l", "9821"]
