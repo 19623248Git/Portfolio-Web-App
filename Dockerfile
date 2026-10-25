@@ -1,5 +1,7 @@
+ARG NODE_IMAGE=node:24.22.1-alpine3.24
+
 # build stage
-FROM node:24.14-alpine3.22 AS builder
+FROM ${NODE_IMAGE} AS builder
 
 WORKDIR /app
 
@@ -13,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # production stage
-FROM node:24.14-alpine3.22 AS production
+FROM ${NODE_IMAGE} AS production
 
 WORKDIR /app
 
